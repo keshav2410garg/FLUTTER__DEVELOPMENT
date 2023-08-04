@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app3/currency_convertor_material_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,11 +7,11 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
-  Widget build(BuildContext Context) {
-    return const  Text(
-      "Hello World!",
-      textDirection: TextDirection.ltr,
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: CurrencyCovertorMaterialPage(),
     );
   }
 }
