@@ -41,9 +41,39 @@ class _ImplementState extends State<StateApp> {
                   foregroundColor: MaterialStatePropertyAll(Colors.amber),
                   fixedSize: MaterialStatePropertyAll(Size(200, 50)),
                 ),
-                child: const Text('INCREAMENT'))
+                child: const Text('INCREAMENT')),
+            ElevatedButton(
+                onPressed: () {
+                  //Navigate to the second page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Secondpage()),
+                  );
+                },
+                child: const Text('Second App Page'))
           ],
         )),
+      ),
+    );
+  }
+}
+
+class Secondpage extends StatelessWidget {
+  const Secondpage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Second Page')),
+        body: Center(
+          child: ElevatedButton(
+              onPressed: () {
+                //Go back to the first page
+                Navigator.pop(context);
+              },
+              child: const Text("Go Back")),
+        ),
       ),
     );
   }

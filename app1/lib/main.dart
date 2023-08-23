@@ -15,11 +15,11 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
   final TextEditingController texteditingcotroller = TextEditingController();
   final TextEditingController texteditingcotroller2 = TextEditingController();
   final TextEditingController texteditingcotroller3 = TextEditingController();
+  double result1 = 0;
+  double result2 = 0;
+  double result3 = 0;
   @override
   Widget build(BuildContext context) {
-    int result1 = 0;
-    int result2 = 0;
-    int result3 = 0;
     return MaterialApp(
         home: DefaultTabController(
             length: 3,
@@ -30,9 +30,10 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
                     text: 'US DOLLAR',
                   ),
                   Tab(text: 'EURO'),
-                  Tab(text: 'Dirham'),
+                  Tab(text: 'DIRHAM'),
                 ]),
                 title: const Text("CURRENCY CONVERTOR"),
+                centerTitle: true,
               ),
               body: TabBarView(children: [
                 //first
@@ -45,7 +46,7 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
                             fontSize: 35,
                             fontWeight: FontWeight.bold,
                           )),
-                      Padding(
+                      Container(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           controller: texteditingcotroller,
@@ -70,7 +71,8 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
                           onPressed: () {
                             setState(() {
                               result1 =
-                                  int.parse(texteditingcotroller.text) * 83;
+                                  double.parse(texteditingcotroller.text) *
+                                      82.87;
                             });
                           },
                           style: const ButtonStyle(
@@ -118,7 +120,8 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
                           onPressed: () {
                             setState(() {
                               result2 =
-                                  int.parse(texteditingcotroller2.text) * 8;
+                                  double.parse(texteditingcotroller2.text) *
+                                      90.02;
                             });
                           },
                           style: const ButtonStyle(
@@ -143,7 +146,7 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
                             fontSize: 35,
                             fontWeight: FontWeight.bold,
                           )),
-                      Padding(
+                      Container(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           controller: texteditingcotroller3,
@@ -166,7 +169,8 @@ class _CurrencyConvertorTabApp extends State<TabApp> {
                           onPressed: () {
                             setState(() {
                               result3 =
-                                  int.parse(texteditingcotroller3.text) * 9;
+                                  double.parse(texteditingcotroller3.text) *
+                                      22.58;
                             });
                           },
                           style: const ButtonStyle(
